@@ -1,0 +1,11 @@
+name: Java CI with Maven
+
+on:
+  push:
+   
+jobs:
+  My-listning-test:
+    runs-on: self-hosted
+    steps:
+      - name: Do some listning
+      - run: ls -l
