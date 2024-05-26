@@ -4,11 +4,9 @@ on:
   push:
    
 jobs:
-  build:
-
+  My-listning-test:
     runs-on: self-hosted
-
     steps:
-    - name: Do some listning
-    - run: ls -l
+      - name: Do some listning
+      - run: ls -l
 
