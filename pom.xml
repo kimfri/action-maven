@@ -6,7 +6,7 @@
 
   <groupId>dev.kimfri</groupId>
   <artifactId>action-maven</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
@@ -21,5 +21,35 @@
       <url>https://maven.pkg.github.com/kimfri/action-maven</url>
     </repository>
   </distributionManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.github.ekryd.echo-maven-plugin</groupId>
+        <artifactId>echo-maven-plugin</artifactId>
+        <version>1.3.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+<!--            <configuration>-->
+<!--              <tasks>-->
+<!--                <echo>CREATING SOURCE JAR</echo>-->
+<!--                <echo message="WOOOJOOOO"/>-->
+<!--              </tasks>-->
+<!--            </configuration>-->
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
