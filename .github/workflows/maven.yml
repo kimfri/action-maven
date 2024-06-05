@@ -1,0 +1,11 @@
+name: Java CI with Maven on Local runner
+
+on: [push]
+
+jobs:
+  do-the-magic:
+    runs-on: java-17
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
